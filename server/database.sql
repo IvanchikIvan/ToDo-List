@@ -1,0 +1,6 @@
+CREATE DATABASE todos;
+
+CREATE TABLE todo(
+    todo_id BIGSERIAL NOT NULL PRIMARY KEY,
+    content VARCHAR (300)
+);

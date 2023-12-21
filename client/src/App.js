@@ -1,64 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./components/redux/store";
 import "./App.css";
+import ListToDo from "./components/ListToDo/ListToDo";
+import Header from "./components/Header/Header";
 
 function App() {
-  const [content, setContent] = useState("");
-  const [todos, setTodos] = useState([]);
-
-  const fetchTodos = async () => {
-    try {
-      const response = await fetch("http://localhost:6969/todos");
-      const data = await response.json();
-      setTodos(data);
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-
-  useEffect(() => {
-    fetchTodos();
-  }, []);
-
-  const handleContentChange = (event) => {
-    setContent(event.target.value);
-  };
-
-  const handleSaveTodo = async (e) => {
-    console.log(e)
-    e.preventDefault();
-    
-    console.log(content.replace("\n", "<br></br>"));
-    try {
-      const body = { content };
-      const response = await fetch("http://localhost:6969/todos", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      console.log(response);
-      fetchTodos();
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Todo List</h1>
-        <input value={content} onChange={handleContentChange} />
-        <button onClick={handleSaveTodo}>Add ToDo</button>
-      </header>
-      <main className="App-main">
-        <ul>
-          {todos.map((todo) => (
-            <li key={todo.todo_id}>
-              {todo.content}
-            </li>
-          ))}
-        </ul>
-      </main>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        <ListToDo />
+      </div>
+    </Provider>
   );
 }
 

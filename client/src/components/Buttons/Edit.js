@@ -72,6 +72,7 @@ const EditToDo = (id) => {
         <h2>Edit Content</h2>
         <input type="text" value={content} placeholder="Edit" onChange={(e) => setContent(e.target.value)}/>
         <button onClick={(e) => {editToDo(e)}}>Edit</button>
+        <button onClick={closeModal}>Close</button>
       </Modal>
     </div>
   );

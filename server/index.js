@@ -15,7 +15,6 @@ app.post("/todos", async (req, res) => {
     );
 
     res.json(newTodo);
-    console.log(content);
   } catch (err) {
     console.error(err.message);
   }

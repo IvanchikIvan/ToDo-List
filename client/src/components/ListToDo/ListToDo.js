@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateTodos } from "../redux/actions";
+import Delete from "../Buttons/Delete";
+import EditToDo from '../Buttons/Edit'
 
 const ListToDo = () => {
   const dispatch = useDispatch();
@@ -24,7 +26,13 @@ const ListToDo = () => {
     <div className="todo-list">
       <ul>
         {todos.map((todo) => (
-          <li key={todo.todo_id}>{todo.content}</li>
+          <li key={todo.todo_id}>
+            {todo.content}
+            <div className="actions">
+              <EditToDo id={todo.todo_id} />
+              <Delete id={todo.todo_id} />
+            </div>
+          </li>
         ))}
       </ul>
     </div>

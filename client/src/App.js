@@ -1,23 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
+  const [content, setContent] = useState("");
+  const [todos, setTodos] = useState([]);
+
+  const fetchTodos = async () => {
+    try {
+      const response = await fetch("http://localhost:6969/todos");
+      const data = await response.json();
+      setTodos(data);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchTodos();
+  }, []);
+
+  const handleContentChange = (event) => {
+    setContent(event.target.value);
+  };
+
+  const handleSaveTodo = async (e) => {
+    console.log(e)
+    e.preventDefault();
+    
+    console.log(content.replace("\n", "<br></br>"));
+    try {
+      const body = { content };
+      const response = await fetch("http://localhost:6969/todos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      console.log(response);
+      fetchTodos();
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Todo List</h1>
+        <input value={content} onChange={handleContentChange} />
+        <button onClick={handleSaveTodo}>Add ToDo</button>
       </header>
+      <main className="App-main">
+        <ul>
+          {todos.map((todo) => (
+            <li key={todo.todo_id}>
+              {todo.content}
+            </li>
+          ))}
+        </ul>
+      </main>
     </div>
   );
 }

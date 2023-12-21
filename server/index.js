@@ -6,7 +6,7 @@ require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
-
+console.log(process.env)
 app.post("/todos", async (req, res) => {
   try {
     const { content } = req.body;

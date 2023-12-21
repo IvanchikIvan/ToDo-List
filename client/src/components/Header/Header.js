@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { updateTodos } from "../redux/actions";
 
 const Header = () => {
   const [content, setContent] = useState("");
-  const [todos, setTodos] = useState([]);
+
+  const dispatch = useDispatch();
 
   const handleContentChange = (event) => {
     setContent(event.target.value);
@@ -31,7 +34,7 @@ const Header = () => {
     try {
       const response = await fetch("http://localhost:6969/todos");
       const data = await response.json();
-      setTodos(data);
+      dispatch(updateTodos(data));
     } catch (err) {
       console.error(err.message);
     }
@@ -39,7 +42,7 @@ const Header = () => {
 
   useEffect(() => {
     fetchTodos();
-  }, []);
+  }, [dispatch]);
 
   return (
     <header className="header">

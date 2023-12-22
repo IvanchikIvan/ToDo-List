@@ -33,12 +33,18 @@
   gap: 15px;
 }
 
-.edit-button, .delete-button {
-  background-color: rgb(226, 226, 226);
+.edit-button,
+.delete-button {
+  background-color: #e2e2e2;
   border-radius: 6px;
   padding: 4px;
   width: 48px;
   height: 48px;
   object-fit: cover;
+  transition: all 0.2s;
 }
 
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #d4d4d4;
+}

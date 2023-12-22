@@ -4,6 +4,7 @@ import store from "./components/redux/store";
 import "./App.css";
 import ListToDo from "./components/ListToDo/ListToDo";
 import Header from "./components/Header/Header";
+import './reset.css'
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 .header {
-  background-color: #172a3a;
+  background-color: #111f2b;
   color: whitesmoke;
   width: 100%;
   display: flex;
@@ -30,7 +30,7 @@
 
 .header__input {
   width: 100%;
-  padding: 7px;
+  padding: 7px  calc(14px + 12 * (100vw / 1280));
   background-color: whitesmoke;
   color: #3e3e3e;
   border-radius: 25px;
@@ -45,7 +45,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-    transition: all 0.4s;
+    transition: all 0.2s;
 }
 
 .header__button:hover {

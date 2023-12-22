@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateTodos } from "../redux/actions";
+import "./Header.css";
 
 const Header = () => {
   const [content, setContent] = useState("");
@@ -46,9 +47,13 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1>Todo List</h1>
-      <input value={content} onChange={handleContentChange} />
-      <button onClick={handleSaveTodo}>Add ToDo</button>
+      <div className="header__container">
+        <h1 className="header__title">Todo List</h1>
+        <div className="header__add-todo">
+          <input value={content} onChange={handleContentChange} className="header__input"/>
+          <button onClick={handleSaveTodo} className="header__button">Add ToDo</button>
+        </div>
+      </div>
     </header>
   );
 };

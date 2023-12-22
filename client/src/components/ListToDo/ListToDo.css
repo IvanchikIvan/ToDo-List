@@ -9,14 +9,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: calc(10px + 12 * (100vw / 1280)) 0;
+  gap: 12px;
 }
 
 .todo-list__ul-item {
   display: flex;
+  font-size: calc(12px + 5 * (100vw / 1280));;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 15px;
+  padding: calc(10px + 10 * (100vw / 1280));
+  background: whitesmoke;
+  border-radius: 15px;
 }
 
 .actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }

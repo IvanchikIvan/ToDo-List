@@ -27,7 +27,7 @@ const ListToDo = () => {
     <div className="todo-list">
       <ul className="todo-list__ul">
         {todos.map((todo) => (
-          <li key={todo.todo_id} todo-list__ul-item>
+          <li key={todo.todo_id} className="todo-list__ul-item">
             {todo.content}
             <div className="actions">
               <EditToDo id={todo.todo_id} />

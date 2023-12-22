@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateTodos } from "../redux/actions";
 import Delete from "../Buttons/Delete";
 import EditToDo from '../Buttons/Edit'
+import './ListToDo.css'
 
 const ListToDo = () => {
   const dispatch = useDispatch();
@@ -24,9 +25,9 @@ const ListToDo = () => {
 
   return (
     <div className="todo-list">
-      <ul>
+      <ul className="todo-list__ul">
         {todos.map((todo) => (
-          <li key={todo.todo_id}>
+          <li key={todo.todo_id} todo-list__ul-item>
             {todo.content}
             <div className="actions">
               <EditToDo id={todo.todo_id} />

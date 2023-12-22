@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { updateTodos } from "../redux/actions";
+import delete_button from '../Assets/delete-button.svg'
 
 const Delete = (id) => {
   const dispatch = useDispatch();
@@ -30,11 +31,12 @@ const Delete = (id) => {
   return (
     <div>
       <button
+      className="delete-button"
         onClick={() => {
           deleteTodo(id);
         }}
       >
-        Delete
+        <img src={delete_button}></img>
       </button>
     </div>
   );

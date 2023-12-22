@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { useDispatch } from "react-redux";
 import { updateTodos } from "../redux/actions";
+import edit_button from '../Assets/edit-button.svg'
 
 const modalStyles = {
   content: {
@@ -62,7 +63,7 @@ const EditToDo = (id) => {
 
   return (
     <div>
-      <button onClick={openModal}>Edit</button>
+      <button className="edit-button" onClick={openModal}><img src={edit_button}></img></button>
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}

@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 .todo-list {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Roboto Slab';
 }
 
 .todo-list__ul {

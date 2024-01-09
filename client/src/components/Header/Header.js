@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateTodos } from "../redux/actions";
 import "./Header.css";
+import add_button from '../Assets/add_button.svg'
 
 const Header = () => {
   const [content, setContent] = useState("");
@@ -51,7 +52,7 @@ const Header = () => {
         <h1 className="header__title">Todo List</h1>
         <div className="header__add-todo">
           <input value={content} onChange={handleContentChange} className="header__input"/>
-          <button onClick={handleSaveTodo} className="header__button">Add ToDo</button>
+          <button onClick={handleSaveTodo} className="header__button"><img src={add_button} alt=""></img></button>
         </div>
       </div>
     </header>

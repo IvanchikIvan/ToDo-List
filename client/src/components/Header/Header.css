@@ -38,8 +38,8 @@
 }
 
 .header__button {
-    background-color: #0e1922;
-    box-shadow: #0e1922 0 0 10px;
+    background-color: #4a5759;
+    box-shadow: #4a5759 0 0 10px;
     width: 140px;
     padding: calc(5px + 12 * (100vw / 1280));
     display: flex;
@@ -50,8 +50,8 @@
 }
 
 .header__button:hover {
-    background-color: #091016;
-    box-shadow: #091016 0 0 10px;
+    background-color: #3a4446;
+    box-shadow: #3a4446 0 0 10px;
 }
 
 .header__button img {

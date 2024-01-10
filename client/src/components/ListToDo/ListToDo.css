@@ -8,18 +8,19 @@
 
 .todo-list__ul {
   display: flex;
-  width: 30%;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: calc(10px + 12 * (100vw / 1280)) 0;
+  padding: 0 calc(10px + 75 * (100vw / 1280));
   gap: 12px;
 }
 
 .todo-list__ul-item {
   width: 100%;
   display: flex;
-  font-size: calc(12px + 5 * (100vw / 1280));
+  font-size: calc(15px + 15 * (100vw / 1280));
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

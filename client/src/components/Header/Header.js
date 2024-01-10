@@ -50,6 +50,7 @@ const Header = () => {
     <header className="header">
       <div className="header__container">
         <h1 className="header__title">Todo List</h1>
+        <h2 className="development-by">Development by <a href="https://github.com/Kavalskiy">#Ivanchik</a></h2>
         <div className="header__add-todo">
           <input value={content} onChange={handleContentChange} className="header__input"/>
           <button onClick={handleSaveTodo} className="header__button"><img src={add_button} alt=""></img></button>

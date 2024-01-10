@@ -22,6 +22,14 @@
     font-size: calc(30px + 12 * (100vw / 1280));
 }
 
+.development-by {
+  font-size: calc(5px + 12 * (100vw / 1280));
+}
+
+.development-by a {
+  color:#333;
+}
+
 .header__add-todo {
   display: flex;
   width: 100%;
